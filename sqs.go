@@ -72,7 +72,7 @@ type ChangeMessageVisibilityResponse struct {
 	ResponseMetadata
 }
 
-// See http://goo.gl/XTo0s for more details 
+// See http://goo.gl/XTo0s for more details
 type ResponseMetadata struct {
 	RequestId string `xml:"ResponseMetadata>RequestId"`
 }
@@ -404,7 +404,7 @@ func (q *Queue) SendMessageBatch(sendMessageBatchRequests []SendMessageBatchRequ
 // See http://goo.gl/c3YCr for more details
 func (q *Queue) Delete() (resp *DeleteQueueResponse, err error) {
 	resp = &DeleteQueueResponse{}
-	params := makeParams("Delete")
+	params := makeParams("DeleteQueue")
 
 	err = q.SQS.query(q.Url, params, resp)
 	return
